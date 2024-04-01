@@ -1,6 +1,6 @@
 
 // import bgk from "../src/assets/img/bkg.png"
-import bgk from "../public/bkg.png"
+// import bgk from "../public/bkg.png"
 
 import { generateMap } from "./map";
 
@@ -18,7 +18,7 @@ const assets = {
 const imgBgk = new Image();
 
 // imgBgk.src = "../src/assets/img/bkg.png"
-imgBgk.src = "../public/bkg.png"
+imgBgk.src = "/bkg.png"
 
 let map = generateMap(8, 10)
 
