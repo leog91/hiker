@@ -8,30 +8,19 @@ import Card from "../components/Card.astro";
 </Layout>
 <div class="flex flex-col items-center">
   <div class="bg-red-500 h-10 w-10"></div>
-  <div class="bg-slate-600 m-5">
-    <canvas height="300" width="500"></canvas>
-  </div>
 
-  <img
-    hidden
-    id="sprite"
-    src="../src/assets/img/bkg.png"
-    alt="Sprite Arkanoid"
-  />
+  <img id="sprite" src="../src/assets/img/bkg.png" alt="Sprite Arkanoid" />
   <img
     hidden
     id="bricks"
     src="../src/assets/img/bricks.png"
     alt="Sprite Arkanoid"
   />
-</div>
 
-<!-- <img
-    hidden
-    id="bricks"
-    src="./assets/img/bricks.png"
-    alt="Sprite Bricks Arkanoid"
-  /> -->
+  <div class="bg-slate-600 m-5">
+    <canvas height="300" width="500"></canvas>
+  </div>
+</div>
 
 <script>
   import { main } from "../game";
