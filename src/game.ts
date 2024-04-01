@@ -47,6 +47,8 @@ export const main = () => {
     function drawBkg() {
         if (!ctx) return
 
+        if (!imgBgk.complete) return
+
         ctx.drawImage(
             imgBgk, // img
             0, // x
