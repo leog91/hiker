@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main></main>
+</Layout>
+<div class="flex flex-col items-center">
+  <div class="bg-slate-600 m-5">
+    <canvas height="300" width="500"></canvas>
+  </div>
+</div>
+
+<script>
+  import { main } from "../pong/pong";
+
+  main();
+</script>
