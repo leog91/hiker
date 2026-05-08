@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Walker">
+  <main>
+    <div class="flex flex-col items-center bg-blue-800 min-h-screen font-semibold text-green-300">
+      <canvas width="760" height="480" class="mt-4 border-2 border-gray-600"></canvas>
+
+      <div class="flex">
+        <div class="m-6 grid grid-cols-3 content-center text-center text-2xl">
+          <div></div>
+          <button onclick="__w.move('UP')" class="m-1 flex h-14 w-14 items-center justify-center rounded-md bg-slate-400 hover:bg-slate-200 hover:text-black cursor-pointer">▲</button>
+          <div></div>
+          <button onclick="__w.move('LEFT')" class="m-1 flex h-14 w-14 items-center justify-center rounded-md bg-slate-400 hover:bg-slate-200 hover:text-black cursor-pointer">◄</button>
+          <button onclick="__w.move('DOWN')" class="m-1 flex h-14 w-14 items-center justify-center rounded-md bg-slate-400 hover:bg-slate-200 hover:text-black cursor-pointer">▼</button>
+          <button onclick="__w.move('RIGHT')" class="m-1 flex h-14 w-14 items-center justify-center rounded-md bg-slate-400 hover:bg-slate-200 hover:text-black cursor-pointer">►</button>
+        </div>
+
+        <div class="m-6 flex flex-col items-center rounded-3xl bg-blue-500 sm:flex-row">
+          <button onclick="__w.handler('z')" class="m-2 h-16 w-16 rounded-full bg-blue-900 text-lg font-black cursor-pointer">z</button>
+          <button onclick="__w.handler('x')" class="m-2 h-16 w-16 rounded-full bg-blue-900 text-lg font-black cursor-pointer">x</button>
+          <button onclick="__w.handler('Enter')" class="m-2 h-16 w-16 rounded-full bg-blue-900 text-lg font-black cursor-pointer">↵</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  import { main } from "../walker/walkerGame";
+  
+  console.log("Walker script loaded!");
+  
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("DOM loaded, running main()");
+      try {
+        main();
+      } catch (e) {
+        console.error("Error in main():", e);
+      }
+    });
+  } else {
+    console.log("DOM already loaded, running main()");
+    try {
+      main();
+    } catch (e) {
+      console.error("Error in main():", e);
+    }
+  }
+</script>
